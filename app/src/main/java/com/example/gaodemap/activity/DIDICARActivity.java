@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.reactivex.functions.Consumer;
 
 public class DIDICARActivity extends AppCompatActivity {
@@ -44,11 +46,15 @@ public class DIDICARActivity extends AppCompatActivity {
     private double lng = 0.0;
     private double lat = 0.0;
 
+     @BindView(R.id.gd_multi)
+     Button gd_multi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_didicar);
 
+       ButterKnife.bind(this);
         mMapView = (MapView) findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
         if (aMap == null) {
@@ -146,6 +152,13 @@ public class DIDICARActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(DIDICARActivity.this,GPSNaviActivity.class);
+                startActivity(intent);
+            }
+        });
+        gd_multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(DIDICARActivity.this,RestRouteShowActivity.class);
                 startActivity(intent);
             }
         });

@@ -65,6 +65,9 @@
         <activity android:name=".activity.SingleRouteCalculateActivity"/>
         <activity android:name=".activity.SmoothMoveActivity"/>
         <activity android:name=".activity.GPSNaviActivity"/>
+        <activity android:name=".activity.SearchPoiActivity"/>
+        <activity android:name=".activity.RestRouteShowActivity"/>
+        <activity android:name=".activity.RouteNaviActivity"/>
 
         <!-- 高德地图配置key -->
         <meta-data
